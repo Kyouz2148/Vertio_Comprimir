@@ -1,9 +1,36 @@
+version: '3'
+
+name: vertio-comprimir
+
 services:
-  comprimir:
-    build: .
-    container_name: compressor-arquivos
+  vertio-comprimir:
+    image: kyouz2148/vertio-comprimir:latest
+    container_name: vertio-comprimir
     restart: unless-stopped
     ports:
       - "8088:8088"
     environment:
       - PYTHONUNBUFFERED=1
+    x-casaos: 
+          description:
+            en_US: Python stdout buffering
+
+x-casaos:
+  id: com.vertio.comprimir
+  architectures:
+    - amd64
+    - arm64
+  main: vertio-comprimir
+  author: Vertio
+  category: Utilities
+  description:
+    en_US: Fast and private image and PDF compressor with target size (KB/MB) and quality controls.
+  developer: Vertio
+  icon: https://raw.githubusercontent.com/IceWhaleTech/CasaOS-AppStore/main/Apps/vertio-comprimir/icon.svg
+  tagline:
+    en_US: Fast and private image and file compressor
+  title:
+    en_US: Vertio Comprimir
+  port_map: "8088"
+  index: /
+  scheme: http
