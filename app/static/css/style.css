@@ -1,0 +1,46 @@
+/* Pure Minimalist Monochrome Design */
+:root {
+  color-scheme: light dark;
+}
+
+/* Drag and Drop Active Highlight */
+#dropZone.drag-over {
+  border-color: #09090b !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  transform: scale(1.005);
+}
+
+.dark #dropZone.drag-over {
+  border-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.45);
+}
+
+/* Fluid Transitions */
+body, header, main, footer, div, button, span, input, select {
+  transition-property: background-color, border-color, color;
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mode-tab, .size-preset-btn, .quality-preset-btn {
+  user-select: none;
+}
